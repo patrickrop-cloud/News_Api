@@ -1,0 +1,29 @@
+{% macro displayNews(news) %}
+<div class="container" style="background-color: rgb(226, 229, 229); ">
+{% for display in news %}
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <p> {{ display.name}} </p>
+                </div>
+            </div>
+        </div>
+        <a href="/source/{{display.id}}">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <p> {{ display.description}} </p>
+                </div>
+            </div>
+        </div>
+        </a>
+        
+
+    </div>
+    <hr>
+    {% endfor %}
+    
+</div>
+{% endmacro %}
