@@ -1,5 +1,6 @@
 from .models import News, NewsArticle
-import urllib.request,json
+import urllib.request
+import json
 
 api_key = None
 base_url = None
@@ -16,7 +17,7 @@ def get_news():
     """
   Function that gets the json response to our url request
   """
-    get_news_url = 'https://newsapi.org/v2/top-headlines/sources?apiKey=3a404420748f44a4b0e8dcabe5b7b563'
+    get_news_url = 'https://newsapi.org/v2/sources?apiKey=3a404420748f44a4b0e8dcabe5b7b563'
 
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
@@ -103,6 +104,13 @@ def get_article(id):
             news_article = process_article(news_article_list)
 
     return news_article
+
+
+
+
+
+
+
 
 
 

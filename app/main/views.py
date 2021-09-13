@@ -4,7 +4,7 @@ from . import main
 from ..requests import get_article, get_news, process_article
 
 #Views
-@main.route('/', methods=['GET'])
+@main.route('/')
 def index():
 
     '''

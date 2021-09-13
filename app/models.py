@@ -1,3 +1,6 @@
+from os import name
+
+
 class News:
     '''
     News class to define News Objects
@@ -14,8 +17,9 @@ class News:
 
 class NewsArticle:
 
-    def __init__(self,id,title,author,description,url,urlToImage,publishedAt,content):
+    def __init__(self,id,name,title,author,description,url,urlToImage,publishedAt,content):
         self.id = id
+        self.name = name
         self.title = title
         self.author = author
         self.description = description
