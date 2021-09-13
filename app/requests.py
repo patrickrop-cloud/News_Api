@@ -84,36 +84,6 @@ def process_article(news_list):
 
     return news_article
 
-# def process_article(news_list):
-    # """
-    # Function  that processes the news article and transform them to a list of Objects
-    # Args:
-    #     news_list: A list of dictionaries that contain news details
-    # Returns :
-    #     news_source: A list of news objects
-    # """
-    # news_article = []
-    # for news_item in news_list:
-    #     id = news_item.get('id')
-    #     name = news_item.get('name')
-    #     title = news_item.get('title')
-    #     author = news_item.get('author')
-    #     description = news_item.get('description')
-    #     url = news_item.get('url')
-    #     urlToImage = news_item.get('urlToImage')
-    #     publishedAt = news_item.get('publishedAt')
-    #     content = news_item.get('content')
-
-    #     if urlToImage:
-    #         news_object = NewsArticle(
-    #             id,name,title, author,description,url,urlToImage,publishedAt,content
-    #         )
-    #         news_article.append(news_object)
-
-    # return news_article
-
-
-
 
 #Getting news articles:
 def get_article(id):
@@ -122,7 +92,7 @@ def get_article(id):
   """
     get_news_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey=3a404420748f44a4b0e8dcabe5b7b563'.format(id)
 
-    with urllib.requests.urlopen(get_news_url) as url:
+    with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
 
@@ -133,31 +103,6 @@ def get_article(id):
             news_article = process_article(news_article_list)
 
     return news_article
-
-
-
-#getting articles
-# def get_article(id):
-#     """
-#   Function that gets the json response to our url request
-#   """
-#     get_news_url = news_article_url.format(id, api_key)
-
-#     with urllib.request.urlopen(get_news_url) as url:
-#         get_article_data = url.read()
-#         get_article_response = json.loads(get_article_data)
-
-#         article_source = None
-
-#         if get_article_response["articles"]:
-#             article_source_list = get_article_response["articles"]
-#             article_source = process_article(article_source_list)
-
-#     return article_source
-
-
-
-
 
 
 
