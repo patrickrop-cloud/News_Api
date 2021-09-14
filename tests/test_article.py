@@ -1,7 +1,7 @@
 import unittest
-from app.models import News
+from app.models import NewsArticle
 
-class NewsTest(unittest.TestCase):
+class NewsArticleTest(unittest.TestCase):
     '''
     Test Class to test the behaviour of the News class
     '''
@@ -10,10 +10,10 @@ class NewsTest(unittest.TestCase):
         '''
         Set up method that will run before every Test
         '''
-        self.new_new_article = News('Thriling api news. Watchout!')
+        self.new_article = NewsArticle('Thriling api news. Watchout!')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.new_news,News))
+        self.assertTrue(isinstance(self.new_news,NewsArticle))
 
     if __name__ == '__main__':
         unittest.main()
